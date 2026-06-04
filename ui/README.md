@@ -5,10 +5,10 @@ Visual UI for the go-issue-solver pipeline.
 ## With a pipeline run
 
 ```bash
-python main.py --ui --no-reset
+python main.py
 ```
 
-Open **http://127.0.0.1:8765/** in your browser. The page auto-refreshes every second.
+The dashboard starts and opens in your browser at **http://127.0.0.1:8765/** (auto-refreshes every second). Use `--no-ui` to skip.
 
 ## Dashboard only (watch an existing run)
 

@@ -9,7 +9,10 @@ __pycache__/
 *.patch.bak
 .DS_Store
 
-# Cloned target repos (user provides path)
+# Auto-cloned target repos (from issue URL)
+test_repo/
+
+# Legacy manual clones
 gin/
 cobra/
 validator/
