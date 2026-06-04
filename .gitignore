@@ -1,0 +1,16 @@
+*.py[cod]
+.env
+.venv/
+venv/
+output/
+logs/*
+!logs/.gitkeep
+__pycache__/
+*.patch.bak
+.DS_Store
+
+# Cloned target repos (user provides path)
+gin/
+cobra/
+validator/
+golangci-lint/
