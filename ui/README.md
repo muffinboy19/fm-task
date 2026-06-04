@@ -1,6 +1,6 @@
 # Live dashboard
 
-Visual UI for the go-issue-solver pipeline.
+Visual UI for the Open Source Issue Solver pipeline.
 
 ## With a pipeline run
 

@@ -1,5 +1,5 @@
 """
-go-issue-solver — agentic AI contributor for open-source Go projects.
+Open Source Issue Solver — agent for open-source Go repositories.
 """
 
 import argparse
@@ -24,7 +24,9 @@ from modules.repo_resolver import resolve_repo_path
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Agentic AI contributor for Go projects")
+    parser = argparse.ArgumentParser(
+        description="Open Source Issue Solver for Go repositories"
+    )
     parser.add_argument("--issue", default=None, help="GitHub issue URL")
     parser.add_argument("--repo", default=None, help="Local cloned Go repo path")
     parser.add_argument("--api-key", default=None)
@@ -145,7 +147,7 @@ def main():
         print(f"Dashboard: {dashboard_url}")
         webbrowser.open(dashboard_url, new=2)
 
-    log.section("go-issue-solver started")
+    log.section("Open Source Issue Solver started")
     log.kv("Issue URL", issue_url)
     log.kv("Output dir", str(output_dir))
     log.kv("LLM provider", get_llm_provider())

@@ -1,6 +1,6 @@
-# Open Source Bug Resolver
+# Open Source Issue Solver for Go Repositories
 
-Agent that reads a GitHub issue, understands the bug, plans and generates a fix, validates it with `go test`, and writes a PR summary — for approved Go projects (gin, cobra, validator, golangci-lint).
+Agent that reads a GitHub issue from an open-source Go repo, plans and generates a fix, validates it with `go test`, and writes a PR summary — for gin, cobra, validator, golangci-lint, and similar projects.
 
 ## Architecture
 
@@ -41,28 +41,35 @@ You can watch each pipeline step, the diff, validation status, and logs update i
 
 ## Setup
 
-**Prerequisites:** Python 3.10+, Go, Git
+**Step 1 — Install**
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
+**Step 2 — Create `.env`**
+
+```bash
 cp .env.example .env
 ```
 
-In `.env`, set only:
+**Step 3 — Add your keys in `.env`**
 
-- `CURSOR_API_KEY` — from the Cursor dashboard in your browser
-- `GITHUB_ISSUE_URL` — full GitHub issue URL to fix
+Open `.env` and fill in these two values (same names as in `.env.example`):
 
-The target repo is cloned automatically into `test_repo/<repo>/`. No manual clone or `GITHUB_REPO_PATH` needed.
+| Variable | What to add |
+|----------|-------------|
+| `CURSOR_API_KEY` | Your Cursor API key (from the Cursor dashboard in your browser) |
+| `GITHUB_ISSUE_URL` | The GitHub issue to fix, e.g. `https://github.com/gin-gonic/gin/issues/1234` |
 
-## Run
+Leave `LLM_PROVIDER=cursor` as in `.env.example`. The repo clones automatically into `test_repo/` — nothing else required.
+
+**Step 4 — Run**
 
 ```bash
 python main.py
 ```
 
-**Outputs:** `output/` (`fix.patch`, `plan.md`, `pr_summary.md`)  
-**Logs:** `logs/run_report.md`
+The dashboard opens in your browser. Results are in `output/` and `logs/run_report.md`.
